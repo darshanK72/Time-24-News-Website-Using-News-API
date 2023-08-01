@@ -181,6 +181,10 @@ nav a::after{
     transition: width 400ms;
 }
 
+header #close{
+    display: none;
+}
+
 nav ul li:hover a::after{
     width: 90%;
 }
@@ -233,7 +237,8 @@ main{
 }
 
 main #trending {
-    width: 70%;
+    width: 80%;
+    margin: auto;
     
 }
 
@@ -242,6 +247,7 @@ main #trending .main-banner{
     border-radius: var(--radius-8);
     overflow: hidden;
     box-shadow: var(--shadow-3);
+    cursor: pointer;
 }
 
 main #trending .main-banner::after{
@@ -277,8 +283,8 @@ main #trending .main-banner::after{
 #trending .main-banner .content p{
     color: var(--white);
     font-weight: 600;
-    font-size: var(--fs-heading);
-    width: 80%;
+    font-size: 3rem;
+    /* width: 80%; */
 }
 
 #trending .main-banner .content .date{
@@ -295,11 +301,12 @@ main #trending .main-banner::after{
 }
 
 #trending .mini-banners .mini-banner-item{
-    width: 48%;
+    width: 32%;
     background-color: var(--surface);
     border-radius: var(--radius-8);
     overflow: hidden;
     box-shadow:var(--shadow-3);
+    cursor: pointer;
 
 }
 
@@ -313,11 +320,14 @@ main #trending .main-banner::after{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    height: 70px;
+    height: 49px;
     overflow: hidden;
 }
 #trending .mini-banner-item img{
+
     width: 100%;
+    height: 200px;
+    object-fit: cover;
     /* width: 100%;
     height: 100%;
     object-fit: cover; */
@@ -407,7 +417,7 @@ main #sidebar .news-item{
 .date{
     font-size: 1.3rem;
     font-weight: 500;
-    color: var(--on-surface);
+    color: rgb(114, 114, 114);
 }
 
 .tags ul{
@@ -520,11 +530,46 @@ footer .links ul li{
 
     nav{
         display: none;
+        overflow: hidden;
+        width: 0px;
+        transition: all 600ms;
     }
+
+    nav.active{
+        display: inline-block;
+        width: 240px;
+        height:100vh;
+    }
+
+    nav ul{
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li a{
+        display: none;
+        font-size: 1.1rem;
+    }
+
+    nav.active ul li a {
+        display: block;
+    }
+
+
 
     .top .menu{
         display: block;
         font-size: 2rem;
+    }
+
+    .menu.active #list{
+        display: none;
+    }
+
+    .menu.active #close{
+        display: block;
     }
 
     ::-webkit-scrollbar{
@@ -651,7 +696,7 @@ footer .links ul li{
     }
 
     main #trending{
-        width: 50%;
+        width: 90%;
     }
 
     main #sidebar{
