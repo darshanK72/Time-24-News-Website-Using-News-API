@@ -259,6 +259,7 @@ main #trending .main-banner::after{
     object-fit: cover;
     width: 100%;
     height: 100%;
+    transition: all 1000ms;
 }
 
 #trending .main-banner .content{
@@ -267,6 +268,10 @@ main #trending .main-banner::after{
     bottom: 0;
     z-index: 10;
     padding: 3rem 4rem;
+}
+
+#trending .main-banner:hover img{
+    transform: scale(1.1);
 }
 
 #trending .main-banner .content p{
@@ -284,24 +289,43 @@ main #trending .main-banner::after{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 #trending .mini-banners .mini-banner-item{
-    width: 32%;
+    width: 48%;
     background-color: var(--surface);
     border-radius: var(--radius-8);
     overflow: hidden;
     box-shadow:var(--shadow-3);
+
 }
+
 
 #trending .mini-banners .mini-banner-item .content{
     padding: 1.3rem;
 }
 
+
+#trending .mini-banners .mini-banner-item .content .title{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    height: 70px;
+    overflow: hidden;
+}
 #trending .mini-banner-item img{
     width: 100%;
+    /* width: 100%;
+    height: 100%;
+    object-fit: cover; */
+    transition: all 800ms;
+}
+
+#trending .mini-banner-item:hover img{
+    transform: scale(1.1);
 }
 
 .badge{
@@ -336,6 +360,7 @@ main #sidebar .news-item{
  justify-content: flex-start;
  align-items: center;
  padding-bottom: 0.6rem;
+ transition: all 800ms;
 }
 
 #sidebar .news-list{
@@ -366,6 +391,11 @@ main #sidebar .news-item{
 #sidebar .news-item .news-content{
     font-size: 1rem;
     padding-left: 1rem;
+    transition: all 800ms;
+}
+
+#sidebar .news-item:hover .news-content{
+    transform: scale(1.06) translateX(10px);
 }
 
 .title{
